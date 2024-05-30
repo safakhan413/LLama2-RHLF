@@ -239,3 +239,15 @@ trainer = Trainer(
     train_dataset=train_dataset,
 )
 trainer.train()
+trainer.save_model("summarization_policy_new/")   ##path to save policy model
+from transformers import AutoTokenizer
+from transformers import AutoModelForCausalLM
+
+model = AutoModelForCausalLM.from_pretrained("summarization_policy_new/")
+model_path = "bigcode/tiny_starcoder_py"
+
+tokenizer = AutoTokenizer.from_pretrained(model_path, truncation=True, max_length=256, padding="max_length")
+text = df.iloc[2]["prompt"]
+tokenized_text = tokenizer(text, return_tensors="pt", max_length=256)
+tokenizer.decode(model.generate(**tokenized_text)[0])
+
