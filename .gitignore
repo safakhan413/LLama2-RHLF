@@ -10,3 +10,7 @@ supervised-summarize-checkpoint/checkpoint-500/optimizer.pt
 supervised-summarize-checkpoint/checkpoint-500/scheduler.pt
 supervised-summarize-checkpoint/checkpoint-500/trainer_state.json
 supervised-summarize-checkpoint/checkpoint-500/training_args.bin
+summarization_policy_new/config.json
+summarization_policy_new/generation_config.json
+summarization_policy_new/model.safetensors
+summarization_policy_new/training_args.bin
